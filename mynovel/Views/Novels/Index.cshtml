@@ -1,0 +1,26 @@
+﻿@model List<Novel>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Rate</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    @foreach (Novel item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>@item.Rate</td>
+            <td><button asp-action="Edit" asp-controller="Novel" asp-route-Id="@item.Id">Edit</button></td>
+            <td></td>
+        </tr>
+    }
+</table>
+<br />
+<a asp-action="Create" asp-controller="Novel">Add News</a>
